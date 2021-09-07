@@ -46,11 +46,11 @@ mIndex = ["normal", "anger", "antidote", "blind", "confusion", "fear", "growth",
 mImages = []
 mAlmanac = []
 for index in mIndex:
-    img = pygame.image.load("img/" + index + ".png")
+    img = pygame.image.load("assets/img/" + index + ".png")
     mImages.append(pygame.transform.scale(img, (edgeLength, edgeLength)))
-    img2 = pygame.image.load("imgB/" + index + ".png")
+    img2 = pygame.image.load("assets/imgB/" + index + ".png")
     mAlmanac.append(pygame.transform.scale(img2, (150, 150)))
-yStar = pygame.image.load("img/star.png")
+yStar = pygame.image.load("assets/img/star.png")
 
 # Sets major game parameters
 # Counts total  eaten of each mushroom type
@@ -63,8 +63,8 @@ achList = [False]*11
 achProgress = [0] * 11
 # Need to reach targets to complete achievement
 achTarget = [1, 1, 1, 1, 8, 33, 30, 10, 100, 1000, 10]
-gameSongs = ["songs/cute.mp3", "songs/funnysong.mp3", "songs/ukulele.mp3"]
-winSound = pygame.mixer.Sound("../sneko2/sounds/win.wav")
+gameSongs = ["assets/songs/cute.mp3", "assets/songs/funnysong.mp3", "assets/songs/ukulele.mp3"]
+winSound = pygame.mixer.Sound("../sneko2/assets/sounds/win.wav")
 # Tracks pop-ups, pops[4] is for managing victory music
 pops = [True] * 5
 # Becomes true after finishing game
@@ -176,12 +176,12 @@ def drawMenu():
     window.fill(fillColor)
     # Draws title snake image
     drawTitle("Mushroom", "Snake")
-    snakeImage = pygame.image.load("img/snake.png")
+    snakeImage = pygame.image.load("assets/img/snake.png")
     snakeImageSmall = pygame.transform.scale(snakeImage, (int(screenX * 0.3), int(screenX * 0.3)))
     window.blit(snakeImageSmall, (screenX * 0.55, screenY * 0.25))
 
     # Draws mushroom image
-    mushImage = pygame.image.load("img/normal.png")
+    mushImage = pygame.image.load("assets/img/normal.png")
     mushImageSmall = pygame.transform.scale(mushImage, (int(screenX * 0.3), int(screenX * 0.3)))
     window.blit(mushImageSmall, (screenX * 0.15, screenY * 0.25))
     return drawStartButton(wood), drawJournalButton(wood), drawAchButton(wood)
@@ -665,8 +665,8 @@ def startGame(luckyNums):
             self.matrix = [[0] * edgeCount for _ in range(edgeCount)]
             self.edgeCount = edgeCount
             self.mushroomCount = [0] * 11
-            self.mushroomSound = pygame.mixer.Sound('sounds/ding.wav')
-            self.crashSound = pygame.mixer.Sound('sounds/crash.wav')
+            self.mushroomSound = pygame.mixer.Sound('assets/sounds/ding.wav')
+            self.crashSound = pygame.mixer.Sound('assets/sounds/crash.wav')
 
             # Set up tiles in game grid
             for i in range(edgeCount):
@@ -963,7 +963,7 @@ def startGame(luckyNums):
     grid.drawGrid(0, snek.dir, snek.head)
 
     # Draws static snake iamge in bottom right
-    snakeImage = pygame.image.load("img/snake.png")
+    snakeImage = pygame.image.load("assets/img/snake.png")
     snakeImageSmall = pygame.transform.scale(snakeImage, (int(screenX * 0.3), int(screenX * 0.3)))
     window.blit(snakeImageSmall, (screenX * 0.55, screenY * 0.78))
 
@@ -1097,7 +1097,7 @@ def startGame(luckyNums):
 # Draws intro screen and loads intro music
 drawIntro()
 startButton, journalButton, achButton = drawMenu()
-pygame.mixer.music.load("../sneko2/songs/ukulele.mp3")
+pygame.mixer.music.load("../sneko2/assets/songs/ukulele.mp3")
 pygame.mixer.music.play(-1)
 pygame.display.update()
 
@@ -1159,12 +1159,12 @@ while active:
                 # Plays background music
                 if mushroomOverlord:
                     if not pops[4]:
-                        pygame.mixer.music.load("../sneko2/songs/buddy.mp3")
+                        pygame.mixer.music.load("../sneko2/assets/songs/buddy.mp3")
                         pygame.mixer.music.play(-1)
                     else:
                         pops[4] = False
                 else:
-                    pygame.mixer.music.load("../sneko2/songs/ukulele.mp3")
+                    pygame.mixer.music.load("../sneko2/assets/songs/ukulele.mp3")
                     pygame.mixer.music.play(-1)
 
             # Journal button triggered
@@ -1209,7 +1209,7 @@ while active:
                     pygame.mixer.music.stop()
                     winSound.play()
                     pygame.time.delay(2000)
-                    pygame.mixer.music.load("../sneko2/songs/buddy.mp3")
+                    pygame.mixer.music.load("../sneko2/assets/songs/buddy.mp3")
                     pygame.mixer.music.play(-1)
 
                     # Draws ending pop-up
@@ -1228,7 +1228,7 @@ while active:
                 # Draws menu
                 drawMenu()
 
-            # Reset menu button colors
+            # Resets menu button colors
             drawStartButton(wood)
             drawJournalButton(wood)
             drawAchButton(wood)
