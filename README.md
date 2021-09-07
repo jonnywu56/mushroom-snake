@@ -1,4 +1,4 @@
-Based off the simple snake game, this new version has mushrooms that impact gameplay with unique effects, ensuring each run is exciting and different.
+Based off the simple snake game, this new version has mushrooms that impact gameplay through different effects, ensuring each run provides players with an exciting and unique experience.
 
 The game contains:
 - 11 Different Types of Mushrooms
