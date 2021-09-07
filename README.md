@@ -6,3 +6,7 @@ The game contains:
 - Journal to Track Discovered Mushrooms and Effects
 - 11 Achievements to Complete
 - Secret Gameplay Mode After Completing All Achievements
+
+Major files:
+main.py - Contains game code
+assets - Contains images and sounds used in main.py
