@@ -8,5 +8,5 @@ The game contains:
 - Secret Gameplay Mode After Completing All Achievements
 
 Major files:
-main.py - Contains game code
-assets - Contains images and sounds used in main.py
+- main.py - Contains game code
+- assets - Contains images and sounds used in main.py
